@@ -4,5 +4,10 @@ export default antfu({
   formatters: true,
   rules: {
     'no-console': 'off',
-  }
+  },
+  ignores: [
+    'dist',
+    'node_modules',
+    '*.md',
+  ],
 })
