@@ -24,12 +24,12 @@ export class FileCredentialsStore implements CredentialsStore {
     return Promise.resolve()
   }
 
-  load(): Promise<LoginCredentials | null> {
+  load(): Promise<Required<LoginCredentials> | null> {
     try {
       if (!fs.existsSync(this.path))
         return Promise.resolve(null)
       const raw = fs.readFileSync(this.path, 'utf-8')
-      const data = JSON.parse(raw) as LoginCredentials
+      const data = JSON.parse(raw) as Required<LoginCredentials>
       if (data.token && data.baseUrl && data.accountId)
         return Promise.resolve(data)
       return Promise.resolve(null)
@@ -52,14 +52,14 @@ export class FileCredentialsStore implements CredentialsStore {
  * 内存凭证存储实现
  */
 export class InMemoryCredentialsStore implements CredentialsStore {
-  private creds: LoginCredentials | null = null
+  private creds: Required<LoginCredentials> | null = null
 
   save(creds: LoginCredentials): Promise<void> {
-    this.creds = creds
+    this.creds = creds as Required<LoginCredentials>
     return Promise.resolve()
   }
 
-  load(): Promise<LoginCredentials | null> {
+  load(): Promise<Required<LoginCredentials> | null> {
     return Promise.resolve(this.creds)
   }
 

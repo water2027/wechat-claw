@@ -1,2 +1,2 @@
-export * from './item'
-export * from './message'
+export { MessageItem, MessageItemBuilder } from './item'
+export { Message, MessageBuilder } from './message'

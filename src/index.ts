@@ -6,28 +6,28 @@ export const version = '1.0.0'
 
 // 导出所有 WeChat 相关功能
 export type {
-  EnumValues,
-  TextItem,
-  MessageItem,
-  WeixinMessage,
-  GetUpdatesResp,
-  QRCode,
-  QRStatusResponse,
-  LoginCredentials,
   CredentialsStore,
-  QRCodeShower,
+  EnumValues,
+  GetUpdatesResp,
+  LoginCredentials,
   LoginExecutor,
-} from "./wechat/index.js";
+  MessageItem,
+  QRCode,
+  QRCodeShower,
+  QRStatusResponse,
+  TextItem,
+  WeixinMessage,
+} from './wechat/index.js'
 
 export {
-  MessageType,
-  MessageItemType,
-  MessageState,
-  Message,
-  MessageBuilder,
   ApiClient,
   FileCredentialsStore,
   InMemoryCredentialsStore,
-  QRCodeShowerImpl,
+  Message,
+  MessageBuilder,
+  MessageItemType,
+  MessageState,
+  MessageType,
   QRCodeLoginExecutor,
-} from "./wechat/index.js";
+  QRCodeShowerImpl,
+} from './wechat/index.js'

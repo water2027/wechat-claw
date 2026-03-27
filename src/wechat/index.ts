@@ -20,7 +20,7 @@ export {
 } from './auth/index.js'
 
 // Export message classes
-export * from './message'
+export { Message, MessageBuilder, MessageItem, MessageItemBuilder } from './message'
 
 // Export types and constants
 export type {
